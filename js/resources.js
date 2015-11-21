@@ -3,6 +3,7 @@
  * image files so that they can be used within your game. It also includes
  * a simple "caching" layer so it will reuse cached images if you attempt
  * to load the same image multiple times.
+ * http://jlongster.com/Making-Sprite-based-Games-with-Canvas
  */
 (function() {
     var resourceCache = {};
@@ -102,7 +103,7 @@
     /* This object defines the publicly accessible functions available to
      * developers by creating a global Resources object.
      */
-    window.Resources = {
+    window.resources = {
         load: load,
         get: get,
         onReady: onReady,
