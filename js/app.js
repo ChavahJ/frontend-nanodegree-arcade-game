@@ -27,7 +27,7 @@ Player.prototype.update = function(dt) {
     if (this.y <= 0) {
         resetPlayer();
     } else (enemy.y === player.y && enemy.x === player.x) {
-        resetPlayer();
+        player.reset;
     }
 };
 
@@ -35,6 +35,9 @@ Player.prototype.render = function() {
     ctx.drawImage(resources.get(this.sprite), this.x, this.y);
 };
 
+Player.prototype.reset = function() {
+
+};
 resetPlayer = function() {
     player.x = 202 && player.y = 415;
 }
