@@ -1,5 +1,4 @@
 #Help the Princess Avoid the Bugs
-================================
 
 **WARNING:** This game is very boring. There is no score. There are no sounds. There is no objective. The princess must avoid the bugs, get to the water, and then start over again.
 
@@ -17,6 +16,7 @@ _Instructions:_
 ###Effective JavaScript: Frogger
 
 [List taken from this document.](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub)
+[Markdown Information](https://guides.github.com/features/mastering-markdown/)
 
 **Checklist for completing project:**
 
