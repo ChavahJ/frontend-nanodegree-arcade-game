@@ -10,6 +10,7 @@ _Instructions:_
 4. If she hits a bug, she freaks out and jumps back to her starting point.
 
 If for some strange reason you are still interested, you can play the game [here](http://chavahj.github.io/frontend-nanodegree-arcade-game/).
+
 ================================
 
 ##FEND PROJECT 3
