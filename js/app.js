@@ -3,13 +3,13 @@ var Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.speed = 101;
+    this.speed = 500;
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    this.speed += speed * dt;
+    this.speed += 500 * dt;
 };
 
 Enemy.prototype.render = function() {
@@ -21,49 +21,47 @@ var Player = function (x, y) {
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
+    this.speed = 500;
 };
 
 Player.prototype.update = function(dt) {
-    //add code here
+    this.speed += 500 * dt;
 };
 
 Player.prototype.render = function() {
     ctx.drawImage(resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function(keyup) {
-    if (keyup = 'left') {
-        this.x -= 101;
-    }
+//https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch
+Player.prototype.handleInput = function(location) {
+    switch (location) {
+        case 'left':
+            this.x -= 101;
+            if (this.x <= 0) {
+                this.x = 0;
+            }
+        break;
 
-    if (keyup = 'up') {
-        this.y += 83;
-    }
+        case 'up':
+            this.y -= 83;
+            if (this.y <= 0) {
+                this.y = 0;
+            }
+        break;
 
-    if (keyup = 'right') {
-        this.x += 83;
-    }
+        case 'right':
+            this.x += 101;
+            if (this.x >= 404) {
+                this.x = 404;
+            }
+        break;
 
-    if (keyup = 'down') {
-        this.y -= 101;
-    }
-
-    //BOUNDRIES
-
-    if (this.x <= 0) {
-        this.x = 0;
-    }
-
-    if (this.x >= 505) {
-        this.x = 505;
-    }
-
-    if (this.y <= 0) {
-        this.y = 0;
-    }
-
-    if (this.y >= 498) {
-        this.y = 498
+        case 'down':
+            this.y += 83;
+            if (this.y >= 416) {
+                this.y = 416
+            }
+        break;
     }
 };
 
@@ -72,8 +70,8 @@ Player.prototype.handleInput = function(keyup) {
 // Place the player object in a variable called player
 
 var enemy1 = new Enemy(0, 83);
-var enemy2 = new Enemy(0, 166);
-var enemy3 = new Enemy(0, 249);
+var enemy2 = new Enemy(101, 166);
+var enemy3 = new Enemy(202, 249);
 
 allEnemies = [enemy1, enemy2, enemy3];
 
