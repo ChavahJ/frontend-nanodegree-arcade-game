@@ -26,10 +26,10 @@ If for some strange reason you are still interested, you can play the game [here
 The Enemy function, including:
 - [x] Loading the image by setting this.sprite to the appropriate image in the image folder
 - [x] Setting the Enemy initial location
-- [ ] Setting the Enemy speed
+- [x] Setting the Enemy speed
 
 The update method for the Enemy
-- [ ] Updates the Enemy location
+- [x] Updates the Enemy location
 - [ ] Handles collision with the Player
 
 Optional: Add your own Enemy methods as needed.

@@ -25,11 +25,10 @@ var Player = function (x, y) {
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
-    this.speed = 500;
 };
 
 Player.prototype.update = function(dt) {
-    this.speed += 500 * dt;
+    //add code here
 };
 
 Player.prototype.render = function() {
