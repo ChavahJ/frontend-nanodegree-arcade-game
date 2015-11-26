@@ -1,6 +1,6 @@
 #Help the Princess Avoid the Bugs
 
-**WARNING:** This game is very boring. There is no score. There are no sounds. There is no objective. The princess must avoid the bugs, get to the water, and then start over again.
+**WARNING:** This game is very boring. There is no score. There are no sounds. There is no overarching goal. The princess must avoid the bugs, get to the water, and then start over again.
 
 _Instructions:_
 

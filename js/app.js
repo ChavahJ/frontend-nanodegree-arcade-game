@@ -3,13 +3,17 @@ var Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.speed = 500;
+    this.speed = 100;
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    this.speed += 500 * dt;
+    this.x += this.speed*dt;
+
+    if (this.x >= 404) {
+        this.x = 0;
+    }
 };
 
 Enemy.prototype.render = function() {
