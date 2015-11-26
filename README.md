@@ -42,7 +42,7 @@ The Player function, including:
 - [x] The handleInput method, which should receive user input, allowedKeys (the key which was pressed) and move the player according to that input.
 - [x] Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down.
 - [x] The player cannot move off screen.
-- [ ] If the player reaches the water the game should be reset by moving the player back to the initial location (you can write a separate reset Player method to handle that).
+- [x] If the player reaches the water the game should be reset by moving the player back to the initial location (you can write a separate reset Player method to handle that).
 
 Optional: Add your own Player methods as needed.
 

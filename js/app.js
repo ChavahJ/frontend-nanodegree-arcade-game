@@ -28,7 +28,10 @@ var Player = function (x, y) {
 };
 
 Player.prototype.update = function(dt) {
-    //add code here
+    if (this.y <= 0){
+        this.x = 202;
+        this.y = 415;
+    }
 };
 
 Player.prototype.render = function() {
@@ -47,9 +50,6 @@ Player.prototype.handleInput = function(location) {
 
         case 'up':
             this.y -= 83;
-            if (this.y <= 0) {
-                this.y = 0;
-            }
         break;
 
         case 'right':
