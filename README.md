@@ -9,6 +9,7 @@ _Instructions:_
 3. She also must avoid the bugs. Why? Because she doesn't like bugs.
 4. If she hits a bug, she freaks out and jumps back to her starting point.
 
+If for some strange reason you are still interested, you can play the game [here](http://chavahj.github.io/frontend-nanodegree-arcade-game/).
 ================================
 
 ##FEND PROJECT 3
@@ -16,6 +17,7 @@ _Instructions:_
 ###Effective JavaScript: Frogger
 
 [List taken from this document.](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub)
+
 [Markdown Information](https://guides.github.com/features/mastering-markdown/)
 
 **Checklist for completing project:**
