@@ -14,17 +14,18 @@ She also must avoid the bugs. Why? Because she doesn't like bugs.
 If she hits a bug, she freaks out and jumps back to her starting point.
 
 
-FEND PROJECT 3
-================================
+==FEND PROJECT 3==
+
 Effective JavaScript: Frogger
+
 List taken from: https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub
 
 Checklist for completing project:
 
 The Enemy function, including:
-    ✔ Loading the image by setting this.sprite to the appropriate image in the image folder
-    ✔ Setting the Enemy initial location
-    ✘ Setting the Enemy speed
+* ✔ Loading the image by setting this.sprite to the appropriate image in the image folder
+* ✔ Setting the Enemy initial location
+* ✘ Setting the Enemy speed
 
 The update method for the Enemy
     ✔ Updates the Enemy location
