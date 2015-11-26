@@ -1,6 +1,6 @@
 #Help the Princess Avoid the Bugs
 
-**WARNING:** This game is very boring. There is no score. There are no sounds. There is no objective. The princess must avoid the bugs, get to the water, and then start over again.
+**WARNING:** This game is very boring. There is no score. There are no sounds. There is no overarching goal. The princess must avoid the bugs, get to the water, and then start over again.
 
 _Instructions:_
 
@@ -9,6 +9,8 @@ _Instructions:_
 3. She also must avoid the bugs. Why? Because she doesn't like bugs.
 4. If she hits a bug, she freaks out and jumps back to her starting point.
 
+If for some strange reason you are still interested, you can play the game [here](http://chavahj.github.io/frontend-nanodegree-arcade-game/).
+
 ================================
 
 ##FEND PROJECT 3
@@ -16,6 +18,7 @@ _Instructions:_
 ###Effective JavaScript: Frogger
 
 [List taken from this document.](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub)
+
 [Markdown Information](https://guides.github.com/features/mastering-markdown/)
 
 **Checklist for completing project:**
@@ -23,10 +26,10 @@ _Instructions:_
 The Enemy function, including:
 - [x] Loading the image by setting this.sprite to the appropriate image in the image folder
 - [x] Setting the Enemy initial location
-- [ ] Setting the Enemy speed
+- [x] Setting the Enemy speed
 
 The update method for the Enemy
-- [ ] Updates the Enemy location
+- [x] Updates the Enemy location
 - [ ] Handles collision with the Player
 
 Optional: Add your own Enemy methods as needed.

@@ -102,6 +102,7 @@ var Engine = (function(global) {
      * game tick (or loop of the game engine) because that's how games work -
      * they are flipbooks creating the illusion of animation but in reality
      * they are just drawing the entire screen over and over.
+     * http://hasgraphics.com/danc-planet-cute-tileset/
      */
     function render() {
         /* This array holds the relative URL to the image used
