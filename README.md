@@ -1,17 +1,16 @@
 #Help the Princess Avoid the Bugs
 
-**WARNING:** This game is very boring. There is no score. There are no sounds. There is no overarching goal. The princess must avoid the bugs, get to the water, and then start over again.
+**WARNING:** This game is very boring. There is no score. There are no sounds. There is no overarching goal. Avoid the bugs, get to the water, and start again.
 
 _Instructions:_
 
 1. Move the princess up (▲), down (▼), left (◄), and right (►).
-2. She needs to get to the water. Why? I don't know. She just needs to.
+2. She wants to go swimming. But when she gets to the water, she changes her mind and jumps back.
 3. She also must avoid the bugs. Why? Because she doesn't like bugs.
 4. If she hits a bug, she freaks out and jumps back to her starting point.
+5. Once back in the starting position, she decides that she wants to go swimming.
 
 If for some strange reason you are still interested, you can play the game [here](http://chavahj.github.io/frontend-nanodegree-arcade-game/).
-
-================================
 
 ##FEND PROJECT 3
 
