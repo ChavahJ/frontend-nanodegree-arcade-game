@@ -1,10 +1,8 @@
 // APP.JS
 // This is where the game entities are instantiated, updated, and drawn.
-
 // ENEMIES
 // The creation of an Enemy prototype, with basic characteristics defined.
 // Basic characteristics include the enemy image, location, and speed.
-
 var Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
@@ -19,7 +17,7 @@ var Enemy = function(x, y) {
  * engine.js file.
  */
 Enemy.prototype.update = function(dt) {
-    this.x += this.speed*dt;
+    this.x += this.speed * dt;
     if (this.x >= 505) {
         this.x = 0;
     }
@@ -34,8 +32,8 @@ Enemy.prototype.render = function() {
  * This includes creating a Player prototype, with basic characteristics
  * defined, such as the image and location. The player entity does not need
  * a speed defined, since it will be moving according to user input.
-*/
-var Player = function (x, y) {
+ */
+var Player = function(x, y) {
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
@@ -48,15 +46,10 @@ var Player = function (x, y) {
  */
 Player.prototype.update = function(dt) {
 
-    if (this.y === 0){
+    if (this.y === 0) {
         this.x = 202;
         this.y = 415;
     }
-
-    /* If the player image occupies the same square as an enemy image, then
-     * the player will appear in her starting position.
-     */
-
 };
 
 //The render function taps into resources.js so images are cached during play.
@@ -74,25 +67,30 @@ Player.prototype.handleInput = function(location) {
             if (this.x <= 0) {
                 this.x = 0;
             }
-        break;
+            break;
 
         case 'up':
             this.y -= 83;
-        break;
+            break;
 
         case 'right':
             this.x += 101;
             if (this.x >= 404) {
                 this.x = 404;
             }
-        break;
+            break;
 
         case 'down':
             this.y += 83;
             if (this.y >= 416) {
-                this.y = 416
+                this.y = 416;
             }
-        break;
+            break;
+
+        default:
+            this.x = 202;
+            this.y = 415;
+            break;
     }
 };
 
@@ -112,14 +110,14 @@ var player = new Player(202, 415);
 //Help from: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 //Help from: https://discussions.udacity.com/t/my-collision-function-doesnt-work/35488
 function checkCollisions() {
-    for (var i = 0; i < allEnemies.length; i++) {
+    for (i = 0; i < allEnemies.length; i += 1) {
         if ((allEnemies[i].x) <= player.x + 60 &&
             (allEnemies[i].x + 60) >= (player.x) &&
-            (allEnemies[i].y)<= player.y + 50 &&
+            (allEnemies[i].y) <= player.y + 50 &&
             (allEnemies[i].y + 50) >= (player.y)) {
-                player.x = 202;
-                player.y = 415;
-                console.log("collision");
+            player.x = 202;
+            player.y = 415;
+            console.log("collision");
         }
     }
 }
