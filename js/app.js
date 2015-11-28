@@ -47,7 +47,8 @@ var Player = function (x, y) {
  * return to her starting position if she collides with an enemy.
  */
 Player.prototype.update = function(dt) {
-    if (this.y === -83){
+
+    if (this.y === 0){
         this.x = 202;
         this.y = 415;
     }
@@ -55,7 +56,7 @@ Player.prototype.update = function(dt) {
     /* If the player image occupies the same square as an enemy image, then
      * the player will appear in her starting position.
      */
- 
+
 };
 
 //The render function taps into resources.js so images are cached during play.
@@ -107,6 +108,21 @@ allEnemies = [enemy1, enemy2, enemy3];
 
 var player = new Player(202, 415);
 
+//COLLISION STUFF
+//Help from: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+//Help from: https://discussions.udacity.com/t/my-collision-function-doesnt-work/35488
+function checkCollisions() {
+    for (var i = 0; i < allEnemies.length; i++) {
+        if ((allEnemies[i].x) <= player.x + 60 &&
+            (allEnemies[i].x + 60) >= (player.x) &&
+            (allEnemies[i].y)<= player.y + 50 &&
+            (allEnemies[i].y + 50) >= (player.y)) {
+                player.x = 202;
+                player.y = 415;
+                console.log("collision");
+        }
+    }
+}
 
 // The program needs to know which keystrokes it should "listen" to.
 // The event handler function above will reference this.

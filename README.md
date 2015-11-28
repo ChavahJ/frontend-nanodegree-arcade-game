@@ -29,14 +29,14 @@ The Enemy function, including:
 
 The update method for the Enemy
 - [x] Updates the Enemy location
-- [ ] Handles collision with the Player
+- [x] Handles collision with the Player
 
 Optional: Add your own Enemy methods as needed.
 
 The Player function, including:
 - [x] Loading the image by setting this.sprite to the appropriate image in the image folder.
 - [x] Setting the Player initial location.
-- [ ] The update method for the Player (can be similar to the one for the Enemy)
+- [x] The update method for the Player (can be similar to the one for the Enemy)
 - [x] The render method for the Player (use the code from the render method for the Enemy).
 - [x] The handleInput method, which should receive user input, allowedKeys (the key which was pressed) and move the player according to that input.
 - [x] Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down.

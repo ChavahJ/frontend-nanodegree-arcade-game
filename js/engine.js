@@ -64,7 +64,7 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
-        reset();
+        // reset();
         lastTime = Date.now();
         main();
     }
@@ -75,13 +75,13 @@ var Engine = (function(global) {
      * same space, for instance when your character should die), you may find
      * the need to add an additional function call here. For now, we've left
      * it commented out - you may or may not want to implement this
-     * functionality this way (you could just implement collision detection
-     * on the entities themselves within your app.js file).
+     * functionality this way.
      */
+
     function update(dt) {
-        updateEntities(dt);
-        // checkCollisions();
-    }
+         updateEntities(dt);
+         checkCollisions();
+     }
 
     /* This is called by the update function  and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
