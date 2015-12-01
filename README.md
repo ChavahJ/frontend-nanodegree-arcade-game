@@ -11,7 +11,8 @@ _Instructions:_
 5. Once back in the starting position, she decides that she wants to go swimming.
 
 If for some strange reason you are still interested, you can play the game [here](http://chavahj.github.io/nanodegree-arcade-game/).
-If for some even stranger reason you want to download this and play it on your machine, then go [here](https://github.com/ChavahJ/nanodegree-arcade-game) and click on "Download ZIP." Extract the files into a new folder on your computer, and open the index.html file in the browser of your choice. Voilà — you can now play the most boring frogger clone, on your personal computer.
+
+If for some even stranger reason you want to download this and play it on your machine, then go [here](https://github.com/ChavahJ/nanodegree-arcade-game) and click on "Download ZIP." Extract the files into a new folder on your computer, and open the index.html file in the browser of your choice. Voilà — you can now play the most boring frogger clone on your personal computer.
 
 ##FEND PROJECT 3
 
