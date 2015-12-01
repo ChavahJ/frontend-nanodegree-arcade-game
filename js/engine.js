@@ -68,6 +68,22 @@ var Engine = (function(global) {
         main();
     }
 
+    //COLLISION STUFF
+    //Help from: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    //Help from: https://discussions.udacity.com/t/my-collision-function-doesnt-work/35488
+    function checkCollisions() {
+        for (i = 0; i < allEnemies.length; i += 1) {
+            if ((allEnemies[i].x) <= player.x + 60 &&
+                (allEnemies[i].x + 60) >= (player.x) &&
+                (allEnemies[i].y) <= player.y + 50 &&
+                (allEnemies[i].y + 50) >= (player.y)) {
+                player.x = 202;
+                player.y = 415;
+                console.log("collision");
+            }
+        }
+    }
+
     /* This function is called by main (our game loop) and itself calls all
      * of the functions which may need to update entity's data. Based on how
      * you implement your collision detection (when two entities occupy the

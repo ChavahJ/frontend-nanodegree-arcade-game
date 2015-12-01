@@ -7,7 +7,7 @@ var Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.speed = 100;
+    this.speed = Math.floor((Math.random() * 200) + 100);
 };
 
 /* The enemy position must be updated to create the "flipbook" effect.
@@ -71,6 +71,9 @@ Player.prototype.handleInput = function(location) {
 
         case 'up':
             this.y -= 83;
+            if (this.y <= 0) {
+                this.y = 0;
+            }
             break;
 
         case 'right':
@@ -99,28 +102,12 @@ Player.prototype.handleInput = function(location) {
 // The player object is created in a variable called player.
 
 var enemy1 = new Enemy(0, 83);
-var enemy2 = new Enemy(101, 166);
-var enemy3 = new Enemy(202, 249);
+var enemy2 = new Enemy(202, 166);
+var enemy3 = new Enemy(404, 249);
 
 allEnemies = [enemy1, enemy2, enemy3];
 
 var player = new Player(202, 415);
-
-//COLLISION STUFF
-//Help from: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-//Help from: https://discussions.udacity.com/t/my-collision-function-doesnt-work/35488
-function checkCollisions() {
-    for (i = 0; i < allEnemies.length; i += 1) {
-        if ((allEnemies[i].x) <= player.x + 60 &&
-            (allEnemies[i].x + 60) >= (player.x) &&
-            (allEnemies[i].y) <= player.y + 50 &&
-            (allEnemies[i].y + 50) >= (player.y)) {
-            player.x = 202;
-            player.y = 415;
-            console.log("collision");
-        }
-    }
-}
 
 // The program needs to know which keystrokes it should "listen" to.
 // The event handler function above will reference this.
