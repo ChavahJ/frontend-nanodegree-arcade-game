@@ -1,4 +1,4 @@
-/* Engine.js
+/* ENGINE.JS
  * This file provides the game loop functionality (update entities and render),
  * draws the initial game board on the screen, and then calls the update and
  * render methods on your player and enemy objects (defined in your app.js).
@@ -13,7 +13,6 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
-
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -64,9 +63,25 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
-        reset();
+        // reset();
         lastTime = Date.now();
         main();
+    }
+
+    //COLLISION STUFF
+    //Help from: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    //Help from: https://discussions.udacity.com/t/my-collision-function-doesnt-work/35488
+    function checkCollisions() {
+        for (i = 0; i < allEnemies.length; i += 1) {
+            if ((allEnemies[i].x) <= player.x + 60 &&
+                (allEnemies[i].x + 60) >= (player.x) &&
+                (allEnemies[i].y) <= player.y + 50 &&
+                (allEnemies[i].y + 50) >= (player.y)) {
+                player.x = 202;
+                player.y = 415;
+                console.log("collision");
+            }
+        }
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -75,12 +90,12 @@ var Engine = (function(global) {
      * same space, for instance when your character should die), you may find
      * the need to add an additional function call here. For now, we've left
      * it commented out - you may or may not want to implement this
-     * functionality this way (you could just implement collision detection
-     * on the entities themselves within your app.js file).
+     * functionality this way.
      */
+
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -102,18 +117,17 @@ var Engine = (function(global) {
      * game tick (or loop of the game engine) because that's how games work -
      * they are flipbooks creating the illusion of animation but in reality
      * they are just drawing the entire screen over and over.
+     * http://hasgraphics.com/danc-planet-cute-tileset/
      */
     function render() {
-        /* This array holds the relative URL to the image used
-         * for that particular row of the game level.
-         */
+        // Array to hold the relative URL of images for each row in game.
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 3 of stone
+                'images/stone-block.png', // Row 2 of 3 of stone
+                'images/stone-block.png', // Row 3 of 3 of stone
+                'images/grass-block.png', // Row 1 of 2 of grass
+                'images/grass-block.png' // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
@@ -121,16 +135,20 @@ var Engine = (function(global) {
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
-         * portion of the "grid"
+         * portion of the grid. Note: There is a loop within a loop.
+         * The first loop is the row, and then there is a second loop to draw
+         * each column within that row. The top left corner is (0,0), the top
+         * right corner is (505,0); the bottom left corner is (0,498) and the
+         * bottom right corner is (505,498).
          */
         for (row = 0; row < numRows; row++) {
             for (col = 0; col < numCols; col++) {
-                /* The drawImage function of the canvas' context element
-                 * requires 3 parameters: the image to draw, the x coordinate
-                 * to start drawing and the y coordinate to start drawing.
-                 * We're using our Resources helpers to refer to our images
-                 * so that we get the benefits of caching these images, since
-                 * we're using them over and over.
+                /* The drawImage function of the canvas's context element
+                 * requires 3 parameters: 1 - The image to draw; 2 - The x
+                 * coordinate of where to start drawing; and 3 - The y
+                 * coordinate of where to start drawing. We're using the helpers
+                 * from resources.js to refer to our images, so that the images
+                 * are cached, making it easy to use them over and over.
                  */
                 ctx.drawImage(resources.get(rowImages[row]), col * 101, row * 83);
             }
@@ -155,17 +173,9 @@ var Engine = (function(global) {
         player.render();
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
-     */
-    function reset() {
-        // noop
-    }
-
-    /* Go ahead and load all of the images we know we're going to need to
-     * draw our game level. Then set init as the callback method, so that when
-     * all of these images are properly loaded our game will start.
+    /* This loads all of the images we're going to need for drawing our game.
+     * "Init" has been set as the callback method, so that when all of these
+     * images are properly loaded, the game will start.
      */
     resources.load([
         'images/stone-block.png',
@@ -176,9 +186,9 @@ var Engine = (function(global) {
     ]);
     resources.onReady(init);
 
-    /* Assign the canvas' context object to the global variable (the window
-     * object when run in a browser) so that developer's can use it more easily
-     * from within their app.js files.
+    /* This assigns the canvas's context object to the global variable, which
+     * is the window object when the game is run in a browser. Doing this
+     * makes it easy to access from the app.js files.
      */
     global.ctx = ctx;
 })(this);
