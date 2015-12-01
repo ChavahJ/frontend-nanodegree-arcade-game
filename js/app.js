@@ -45,7 +45,6 @@ var Player = function(x, y) {
  * return to her starting position if she collides with an enemy.
  */
 Player.prototype.update = function(dt) {
-
     if (this.y === 0) {
         this.x = 202;
         this.y = 415;
@@ -119,5 +118,5 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
-    player.handleInput(allowedKeys[e.keyCode]);
+    player.handleInput(allowedKeys[event.keyCode]);
 });
